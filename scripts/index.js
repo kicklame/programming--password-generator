@@ -7,10 +7,50 @@
  * @returns Un mot de passe sécurisé
  */
 function generatePassword(length) {
-  let pass = 'Not working yet';
+  let pass = ''
+  for(let A = 0 ;A < length;A++ )
+  { 
+    let M = []
+    if (shouldIncludeLowerCase() == true )
+    {
+      M.push(randomLowerCase());
+    }
+   
+    if(shouldIncludeNumbers()== true )
+  {
+    M.push(randomNumber());
+  }
 
-  return pass;
-}
+    if(shouldIncludeSymbols() == true)
+    {
+      M.push(randomSymbol())
+    }
+
+    if(shouldIncludeUpperCase() == true)
+    {
+      M.push(randomUpperCase())
+    }
+
+    pass += arrayRandom(M)
+  }
+    return pass;
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**----------------------------------- */
 /**----------------------------------- */
